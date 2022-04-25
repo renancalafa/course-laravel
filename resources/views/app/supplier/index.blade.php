@@ -11,6 +11,9 @@
 
 @isset($suppliers)
     @for($i = 0; isset($suppliers[$i]); $i++)
+
+        {{-- @dd($loop) --}}
+
         Supplier: {{ $suppliers[$i]['name'] }}
         <br>
         CNPJ: {{$suppliers[$i]['cnpj'] ?? 'Unknown'}}
@@ -42,6 +45,23 @@
         @endswitch 
         <hr>
     @endfor
+
+    {{-- @foreach($suppliers as $key => $supplier)
+        Supplier: {{ $supplier['name'] }}
+        <br>
+        CNPJ: {{$supplier['cnpj'] ?? 'Unknown'}}
+        <hr>
+    @endforeach --}}
+
+    {{-- @forelse($suppliers as $key => $supplier)
+        Supplier: {{ $supplier['name'] }}
+        <br>
+        CNPJ: {{$supplier['cnpj'] ?? 'Unknown'}}
+        <hr>
+    @empty
+        Supplier's List is Empty.    
+    @endforelse --}}
+
 @endisset
 
 {{-- @if(count($suppliers) > 0 && count($suppliers) <= 10)
