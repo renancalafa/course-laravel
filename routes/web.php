@@ -36,6 +36,7 @@ Route::controller(AboutUsController::class)->group(function () {
 
 Route::controller(ContactController::class)->group(function () {
     Route::get('/contact', 'contact')->name('site.contact');
+    Route::post('/contact', 'contact')->name('site.contact');
     Route::get('/contact/{email}', function (string $email) {
         echo 'Function from parameter route!! E-mail: ' . $email; // double quotes for intercalation od variables and strings
     });
