@@ -22,11 +22,14 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     * php artisan migrate:rollback --step=x
      *
      * @return void
      */
     public function down()
     {
-        //
+        Schema::table('suppliers', function (Blueprint $table) {
+            $table->dropColumn(['uf', 'email']);
+        });
     }
 };
