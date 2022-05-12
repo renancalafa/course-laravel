@@ -13,23 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        //
-        Schema::table('suppliers', function (Blueprint $table) {
-            $table->string('uf', 2);
-            $table->string('email',150);
+        Schema::create('societies', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     * php artisan migrate:rollback --step=x
      *
      * @return void
      */
     public function down()
     {
-        Schema::table('suppliers', function (Blueprint $table) {
-            $table->dropColumn(['uf', 'email']);
-        });
+        Schema::dropIfExists('societies');
     }
 };
