@@ -15,8 +15,8 @@ return new class extends Migration
     {
         //
         Schema::table('suppliers', function (Blueprint $table) {
-            $table->string('uf', 2);
-            $table->string('email',150);
+            $table->string('uf', 2)->after('name');
+            $table->string('email',150)->after('name');
         });
     }
 
