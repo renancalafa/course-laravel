@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use \App\Models\Contact;
+use Database\Factories\ContactFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -16,13 +17,16 @@ class ContactSeeder extends Seeder
     public function run()
     {
         //
-        $contact = new Contact();
-        $contact->name = 'Calafa';
-        $contact->phone_number = '999999999';
-        $contact->email = 'calafa@calafa.com';
-        $contact->reason = 1;
-        $contact->message = 'Hello World from CaLaFa';
-        $contact->save();
+        // $contact = new Contact();
+        // $contact->name = 'Calafa';
+        // $contact->phone_number = '999999999';
+        // $contact->email = 'calafa@calafa.com';
+        // $contact->reason = 1;
+        // $contact->message = 'Hello World from CaLaFa';
+        // $contact->save();
+
+        // ContactSeeder(ContactFactory::class, 100)->create();
+        Contact::factory()->count(100)->create();
 
     }
 }

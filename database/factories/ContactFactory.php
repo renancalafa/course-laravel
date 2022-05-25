@@ -14,10 +14,15 @@ class ContactFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    // protected $model = Contact::class;
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->name(),
+            'phone_number' => $this->faker->tollFreePhoneNumber(),
+            'email' => $this->faker->unique()->email(),
+            'reason' => $this->faker->numberBetween(1,3),
+            'message' => $this->faker->text(200),
         ];
     }
 }
